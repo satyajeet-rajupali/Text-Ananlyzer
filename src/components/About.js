@@ -5,7 +5,8 @@ const About = () => {
 
     const darkTheme = {
         color: 'white',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+        border: '1px solid white'
     }
 
     const lightTheme = {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const NavBar = (props) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="/">{props.title}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +23,10 @@ const NavBar = (props) => {
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-primary" type="submit">Search</button>
                     </form> */}
+                    <div className={`form-check form-switch text-${props.mode === 'dark' ? 'white' : 'black'}`}>
+                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode} />
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{props.mode === 'dark' ? 'Enable Light Mode' : 'Enable Dark Mode'}</label>
+                    </div>
                 </div>
             </div>
         </nav>

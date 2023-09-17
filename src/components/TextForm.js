@@ -43,11 +43,11 @@ const TextForm = (props) => {
     }
 
     return (
-        <>
-            <div>
+        <div className="container" style={{color: props.mode === 'dark' ? 'white' : '#000000'}}>
+            <div className="container" >
                 <h3>{props.heading}</h3>
-                <div class="mb-3">
-                    <textarea class="form-control" placeholder={"Enter your text here...."} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                <div className="mb-3">
+                    <textarea className="form-control" placeholder={"Enter your text here...."} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
                 </div>
                 <button className="btn btn-primary mx-1" onClick={handleOnClickUppercase} >Convert to Uppercase</button>
                 <button className="btn btn-primary mx-1" onClick={handleOnClickLowercase} >Convert to LowerCase</button>
@@ -62,9 +62,9 @@ const TextForm = (props) => {
             </div>
             <div className="container">
                 <h3>Preview</h3>
-                <p>{text}</p>
+                <p>{text.length === 0 ? 'Enter your text to preview': text}</p>
             </div>
-        </>
+        </div>
     );
 }
 
