@@ -48,13 +48,13 @@ const App = () => {
 
   return (
     <>
-      <Router basename='/Text-Ananlyzer'>
+      <Router>
         <NavBar title="Text-Analyzer" about="About" mode={mode} toggleMode={toggleMode} showAlert={showAlert} />
         <Alert alert={alert} />
         <div className='container my-3'>
           <Routes>
             <Route exact path="/about" element={<About mode={mode} />} />
-            <Route exact path="/Text-Ananlyzer" element={<TextForm heading="Analyze Text" mode={mode} showAlert={showAlert} />} />
+            <Route exact path="/" element={<TextForm heading="Analyze Text" mode={mode} showAlert={showAlert} />} />
           </Routes>
         </div>
       </Router>
