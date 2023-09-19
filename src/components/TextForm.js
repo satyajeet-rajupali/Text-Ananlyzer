@@ -49,7 +49,7 @@ const TextForm = (props) => {
     }
 
     return (
-        <div className="container" style={{color: props.mode === 'dark' ? 'white' : '#000000'}}>
+        <div className="container" style={{ color: props.mode === 'dark' ? 'white' : '#000000' }}>
             <div className="container" >
                 <h3>{props.heading}</h3>
                 <div className="mb-3">
@@ -68,7 +68,7 @@ const TextForm = (props) => {
             </div>
             <div className="container">
                 <h3>Preview</h3>
-                <p>{text.length === 0 ? 'Text-Analyzer: Convert to Uppercase, Convert to Lowercase, Clear Text, Copy Text & Remove Extra Spaces.': text}</p>
+                <p>{text.length === 0 ? 'Text-Analyzer: Convert to Uppercase, Convert to Lowercase, Clear Text, Copy Text & Remove Extra Spaces.' : text}</p>
             </div>
         </div>
     );

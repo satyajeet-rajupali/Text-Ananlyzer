@@ -55,7 +55,7 @@ const About = (props) => {
                 <div className="accordion-item" style={props.mode === 'light' ? lightThemeWithBorder : darkThemeWithBorder}>
                     <h2 className="accordion-header" >
                         <button className="accordion-button collapsed" style={props.mode === 'light' ? lightThemeWithoutBorder : darkThemeWithoutBorder} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <strong>What Text-Analyzer provides?</strong>
+                            <strong>What Text-Analyzer provides?</strong>
                         </button>
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapser" data-bs-parent="#accordionExample">
