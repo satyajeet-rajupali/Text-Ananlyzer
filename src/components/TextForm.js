@@ -36,10 +36,11 @@ const TextForm = (props) => {
     }
 
     const totalWords = () => {
-        return text !== '' ? text.trim().split(' ').length : 0;
+        return text !== '' ? text.trim().split(/\s+/).length : 0;
     }
 
     const textLength = () => {
+
         return text.length;
     }
 
@@ -54,11 +55,11 @@ const TextForm = (props) => {
                 <div className="mb-3">
                     <textarea className="form-control" placeholder={"Enter your text here...."} value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
                 </div>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleOnClickUppercase} >Convert to Uppercase</button>
-                <button className="btn btn-primary mx-1 my-2" onClick={handleOnClickLowercase} >Convert to LowerCase</button>
-                <button className="btn btn-primary mx-1 my-2" onClick={handleOnClickClear} >Clear Text</button>
-                <button className="btn btn-primary mx-1 my-2" onClick={handleOnClickCopy} >Copy Text</button>
-                <button className="btn btn-primary mx-1 my-2" onClick={handleOnClickRemoveExtraSpaces} >Remove Extra Spaces</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleOnClickUppercase} >Convert to Uppercase</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-2" onClick={handleOnClickLowercase} >Convert to LowerCase</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-2" onClick={handleOnClickClear} >Clear Text</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-2" onClick={handleOnClickCopy} >Copy Text</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-1 my-2" onClick={handleOnClickRemoveExtraSpaces} >Remove Extra Spaces</button>
             </div>
             <div className="container">
                 <h3 className="mt-4">Your Text Summary</h3>
@@ -67,7 +68,7 @@ const TextForm = (props) => {
             </div>
             <div className="container">
                 <h3>Preview</h3>
-                <p>{text.length === 0 ? 'Enter your text to preview': text}</p>
+                <p>{text.length === 0 ? 'Text-Analyzer: Convert to Uppercase, Convert to Lowercase, Clear Text, Copy Text & Remove Extra Spaces.': text}</p>
             </div>
         </div>
     );
