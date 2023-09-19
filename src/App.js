@@ -48,7 +48,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <Router basename='/Text-Ananlyzer'>
         <NavBar title="Text-Analyzer" about="About" mode={mode} toggleMode={toggleMode} showAlert={showAlert} />
         <Alert alert={alert} />
         <div className='container my-3'>
