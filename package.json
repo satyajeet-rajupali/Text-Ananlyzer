@@ -2,7 +2,7 @@
   "name": "textutils",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://satyajeet-rajupali.github.io/Text-Analyzer",
+  "homepage": "https://satyajeet-rajupali.github.io/Text-Ananlyzer",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
