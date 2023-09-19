@@ -13,10 +13,18 @@ const App = () => {
       setMode('dark');
       document.body.style.backgroundColor = '#000000';
       showAlert("Dark mode enabled", "success");
+      document.title  = "Text Analyzer - Dark Mode";
+      setTimeout(() => {
+        document.title  = "Text Analyzer - Home"
+      }, 1500);
     } else  {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode enabled", "success");
+      document.title  = "Text Analyzer - Light Mode";
+      setTimeout(() => {
+        document.title  = "Text Analyzer - Home"
+      }, 1500);
     }
   }
 
