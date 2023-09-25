@@ -1,35 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About.js'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
 
-  const [mode, setMode] = useState('light');
+  let finalTheme = 'light';
+  if (localStorage.getItem('theme')) {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark')
+      finalTheme = 'dark';
+  }
+
+  const [mode, setMode] = useState(finalTheme);
+
+  const enableLightMode = () => {
+    setMode('light');
+    localStorage.setItem('theme', 'light');
+    document.body.style.backgroundColor = 'white';
+    showAlert("Light mode enabled", "success");
+    document.title = "Text Analyzer - Light Mode";
+    setTimeout(() => {
+      document.title = "Text Analyzer - Home"
+    }, 1500);
+  }
+
+  const enableDarkMode = () => {
+    setMode('dark');
+    localStorage.setItem('theme', 'dark');
+    document.body.style.backgroundColor = '#000000';
+    showAlert("Dark mode enabled", "success");
+    document.title = "Text Analyzer - Dark Mode";
+    setTimeout(() => {
+      document.title = "Text Analyzer - Home"
+    }, 1500);
+  }
+
   const toggleMode = () => {
     if (mode === 'light') {
-      setMode('dark');
-      document.body.style.backgroundColor = '#000000';
-      showAlert("Dark mode enabled", "success");
-      document.title = "Text Analyzer - Dark Mode";
-      setTimeout(() => {
-        document.title = "Text Analyzer - Home"
-      }, 1500);
+      enableDarkMode();
     } else {
-      setMode('light');
-      document.body.style.backgroundColor = 'white';
-      showAlert("Light mode enabled", "success");
-      document.title = "Text Analyzer - Light Mode";
-      setTimeout(() => {
-        document.title = "Text Analyzer - Home"
-      }, 1500);
+      enableLightMode();
     }
   }
 
@@ -45,6 +59,20 @@ const App = () => {
       setAlert(null);
     }, 1500);
   }
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem('theme');
+    if (localTheme) {
+      if (localTheme === 'dark') {
+        enableDarkMode();
+      } else {
+        enableLightMode();
+      }
+    } else {
+      enableLightMode();
+    }
+    // eslint-disable-next-line
+  }, [mode]);
 
   return (
     <>
