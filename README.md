@@ -8,7 +8,7 @@ Text-Analyzer is a dynamic text analysis website hosted on Firebase, offering a 
 
 ## Live Demo
 
-[https://github.com/satyajeet-rajupali/Text-Ananlyzer]([https://github.com/satyajeet-rajupali/Text-Ananlyzer](https://text-analyzer-7ff2a.web.app/))
+[Link](https://text-analyzer-7ff2a.web.app/)
 
 ## Setup
 
